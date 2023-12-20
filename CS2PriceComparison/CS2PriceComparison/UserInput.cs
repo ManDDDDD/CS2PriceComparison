@@ -1,4 +1,6 @@
-﻿namespace CS2PriceComparison;
+﻿using System.Text.Json;
+
+namespace CS2PriceComparison;
 
 public class UserInput
 {
@@ -19,8 +21,7 @@ public class UserInput
         switch (input)
         {
             case "1":
-                itemType = "Gun Skin";
-                break;
+                return GetGunType();
             case "2":
                 itemType = "Knife";
                 break;
@@ -45,4 +46,41 @@ public class UserInput
         return itemType;
 
     }
+    private string GetGunType()
+    {
+        string gunType = "";
+        Console.WriteLine("Gun Type");
+        Console.WriteLine("1. Pistol");
+        Console.WriteLine("2. SMG");
+        Console.WriteLine("3. Rifle");
+        Console.WriteLine("4. Heavy");
+        
+        string? input = Console.ReadLine();
+
+        switch (input)
+        {
+            case "1":
+                gunType = "Pistol";
+                break;
+            case "2":
+                gunType = "SMG";
+                break;
+            case "3":
+                gunType = "Rifle";
+                break;
+            case "4":
+                gunType = "Heavy";
+                break;
+        }
+
+        return GetGun(gunType);
+    }
+
+    private string GetGun(string gunType)
+    {
+        return "";
+    }
+
+
+
 }
